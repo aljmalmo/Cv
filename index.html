@@ -3,16 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>منشئ السير الذاتية</title>
+    <title>منشئ السير الذاتية الاحترافية</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 <body>
     <h1>منشئ السير الذاتية الاحترافية</h1>
     <form id="resumeForm">
-        <label for="name">الاسم:</label>
+        <label for="name">الاسم الكامل:</label>
         <input type="text" id="name" required><br>
+        
+        <label for="jobTitle">المنصب المهني:</label>
+        <input type="text" id="jobTitle" required><br>
+        
+        <label for="photo">الصورة الشخصية (اختياري):</label>
+        <input type="file" id="photo" accept="image/*"><br>
         
         <label for="email">البريد الإلكتروني:</label>
         <input type="email" id="email" required><br>
@@ -20,23 +27,35 @@
         <label for="phone">الهاتف:</label>
         <input type="text" id="phone" required><br>
         
+        <label for="address">العنوان:</label>
+        <input type="text" id="address"><br>
+        
+        <label for="linkedin">لينكدإن (اختياري):</label>
+        <input type="text" id="linkedin"><br>
+        
+        <label for="github">جيت هب (اختياري):</label>
+        <input type="text" id="github"><br>
+        
         <label for="summary">الملخص الشخصي:</label>
         <textarea id="summary" required></textarea><br>
         
-        <label for="education">التعليم:</label>
+        <label for="education">التعليم (سطر لكل درجة: درجة - مؤسسة - تاريخ):</label>
         <textarea id="education" required></textarea><br>
         
-        <label for="experience">الخبرة:</label>
+        <label for="experience">الخبرة (سطر لكل وظيفة: منصب - شركة - تاريخ - وصف):</label>
         <textarea id="experience" required></textarea><br>
         
-        <label for="skills">المهارات:</label>
+        <label for="skills">المهارات (مفصولة بفواصل):</label>
         <textarea id="skills" required></textarea><br>
+        
+        <label for="languages">اللغات (مفصولة بفواصل، مع مستوى اختياري):</label>
+        <textarea id="languages"></textarea><br>
         
         <label for="template">اختر القالب:</label>
         <select id="template" required>
-            <option value="template1">قالب بسيط (عمود واحد)</option>
-            <option value="template2">قالب مزدوج الأعمدة</option>
-            <option value="template3">قالب حديث مع ألوان</option>
+            <option value="template1">قالب حديث مع عمود جانبي</option>
+            <option value="template2">قالب كلاسيكي نظيف</option>
+            <option value="template3">قالب إبداعي مع تقدم مهارات</option>
         </select><br>
         
         <button type="button" onclick="generateResume()">إنشاء السيرة الذاتية</button>
