@@ -1,56 +1,200 @@
 body {
-    font-family: Arial, sans-serif;
-    max-width: 800px;
+    font-family: 'Roboto', Arial, sans-serif;
+    max-width: 900px;
     margin: 0 auto;
     padding: 20px;
     direction: rtl;
+    background: #f4f4f4;
 }
 
 form {
     display: grid;
     gap: 10px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 label {
     font-weight: bold;
+    color: #333;
 }
 
 input, textarea, select {
     width: 100%;
-    padding: 8px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
     box-sizing: border-box;
 }
 
 button {
-    padding: 10px;
-    background-color: #4CAF50;
+    padding: 12px;
+    background-color: #007bff;
     color: white;
     border: none;
+    border-radius: 4px;
     cursor: pointer;
+    font-weight: bold;
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #0056b3;
 }
 
-/* قوالب السيرة الذاتية */
+/* عام للقوالب */
 .resume {
-    border: 1px solid #ddd;
-    padding: 20px;
     background: white;
-    margin-top: 20px;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    page-break-inside: avoid;
 }
 
-/* قالب 1: بسيط */
-.template1 h1 { text-align: center; }
-.template1 section { margin-bottom: 20px; }
+.resume h1, .resume h2, .resume h3 {
+    color: #333;
+}
 
-/* قالب 2: مزدوج الأعمدة */
-.template2 { display: grid; grid-template-columns: 1fr 2fr; gap: 20px; }
-.template2 .left { grid-column: 1; }
-.template2 .right { grid-column: 2; }
+.resume img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #007bff;
+}
 
-/* قالب 3: حديث مع ألوان */
-.template3 { background: #f9f9f9; border-radius: 8px; }
-.template3 h1 { color: #007BFF; }
-.template3 section { background: #e9ecef; padding: 10px; margin-bottom: 10px; border-radius: 5px; }
+/* قالب 1: حديث مع عمود جانبي (مستوحى من Responsive Resume) */
+.template1 {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+}
+
+.template1 .left {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.template1 .right {
+    padding: 20px;
+}
+
+.template1 .contact li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.template1 .contact i {
+    margin-left: 10px;
+    color: #007bff;
+}
+
+.template1 .education li, .template1 .experience li {
+    margin-bottom: 15px;
+}
+
+.template1 .skills ul {
+    list-style: none;
+    padding: 0;
+}
+
+.template1 .skills li {
+    background: #e9ecef;
+    padding: 5px 10px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+}
+
+/* قالب 2: كلاسيكي نظيف (مستوحى من Simple One Page) */
+.template2 {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 30px;
+}
+
+.template2 .left {
+    background: #ffffff;
+    padding: 20px;
+}
+
+.template2 .right {
+    padding: 20px;
+}
+
+.template2 .skills .bar {
+    background: #ddd;
+    border-radius: 10px;
+    height: 5px;
+    margin-bottom: 15px;
+}
+
+.template2 .skills .progress {
+    background: #007bff;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.template2 section {
+    margin-bottom: 30px;
+}
+
+.template2 h3 {
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+}
+
+/* قالب 3: إبداعي مع تقدم مهارات (مستوحى من Resume/CV Design) */
+.template3 {
+    display: flex;
+}
+
+.template3 .left {
+    width: 30%;
+    background: #2c3e50;
+    color: white;
+    padding: 30px;
+}
+
+.template3 .right {
+    width: 70%;
+    padding: 30px;
+}
+
+.template3 .profile img {
+    border-color: white;
+}
+
+.template3 .skills li {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.template3 .progress {
+    background: #34495e;
+    height: 5px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.template3 .progress span {
+    background: #18bc9c;
+    height: 100%;
+    display: block;
+    border-radius: 5px;
+}
+
+.template3 .social li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.template3 .social i {
+    margin-right: 10px;
+    font-size: 20px;
+}
